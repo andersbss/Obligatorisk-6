@@ -1,3 +1,3 @@
 # Obligatorisk-6
 
-Webpack osv. er oppe og nikker. Bare installer alle dependecies med yarn eller npm
+Webpack osv. er oppe og nikker. Bare installer alle dependencies med yarn eller npm
