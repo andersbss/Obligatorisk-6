@@ -1,8 +1,9 @@
 import React from 'react';
+import Navbar from './src/components/Navbar';
 
 const App = () => (
   <>
-    <h1>Tittel</h1>
+    <Navbar header1="HIOF" header2="User user" />
   </>
 );
 

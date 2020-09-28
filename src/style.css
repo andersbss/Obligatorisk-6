@@ -4,7 +4,7 @@
     box-sizing: border-box;
 }
 
-body{
+#app {
     display: grid;
     grid-template-rows: auto;
     row-gap: 80px;
@@ -13,7 +13,7 @@ body{
 
 /* || Header & Navigation*/
 
-header{
+header {
     grid-row: 1;
     box-shadow: 0px 6px 10px #00000019;
 }
@@ -30,30 +30,30 @@ nav a {
     font-size: 25px;
 }
 
-#hiofNav{
-    font-family: 'Lalezar', cursive;
+#hiofNav {
+    font-family: "Lalezar", cursive;
 }
 
-#userNav{
+#userNav {
     float: right;
-    font-family: 'Source Sans Pro', sans-serif;
+    font-family: "Source Sans Pro", sans-serif;
 }
 
 /* || Main*/
 
-main{
+main {
     grid-row: 2;
     display: grid;
     grid-template-rows: 2.4fr auto auto;
     row-gap: 60px;
     margin-left: 20%;
     margin-right: 20%;
-    font-family: 'Nunito', sans-serif;
+    font-family: "Nunito", sans-serif;
 }
 
 /* || Todo button*/
 
-#addTodoBtn{
+#addTodoBtn {
     grid-row: 1;
     border: 1px solid black;
     background-color: white;
@@ -68,18 +68,18 @@ main{
     gap: 5px;
 }
 
-#addTodoBtn:hover{
+#addTodoBtn:hover {
     background-color: #48d3c3;
 }
 
-.plus::after{
+.plus::after {
     content: "+";
     font-size: 1.5em;
 }
 
 /* || Todo list*/
 
-#todoList{
+#todoList {
     grid-row: 2;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -97,7 +97,7 @@ main{
 .todoItem {
     height: 180px;
     padding: 20px;
-    box-shadow: 0px 8px 16px #5DD3D829;
+    box-shadow: 0px 8px 16px #5dd3d829;
     max-width: 354px;
 }
 
@@ -127,7 +127,7 @@ main{
     display: flex;
 }
 
-.todoBtn button{
+.todoBtn button {
     border: 1px;
     background-color: #f43940;
     text-decoration: none;
@@ -149,7 +149,7 @@ main{
 
 /* || Completed Todos table & checkbox*/
 
-#completedTodos{
+#completedTodos {
     grid-row: 3;
 }
 
@@ -176,7 +176,7 @@ main{
 #headers {
     font-weight: 700;
     font-size: 15px;
-    background-color: #E6E6E6;
+    background-color: #e6e6e6;
     padding-top: 10px;
 }
 
@@ -206,7 +206,7 @@ main{
 /* || Completed Todos table content*/
 
 #completedTodosTable tr td {
-    color: #8B8B8B;
+    color: #8b8b8b;
     font-size: 15px;
     padding-top: 10px;
     padding-bottom: 10px;
@@ -219,18 +219,18 @@ main{
     max-width: 150px;
 }
 
-#completedTodosTable tr td:nth-last-of-type(4){
+#completedTodosTable tr td:nth-last-of-type(4) {
     padding-left: 3%;
 }
 
-#completedTodosTable tr td:nth-last-of-type(1){
+#completedTodosTable tr td:nth-last-of-type(1) {
     padding-right: 5%;
 }
 
 /* || Todo popup*/
 
 .popup {
-    font-family: 'Nunito', sans-serif;
+    font-family: "Nunito", sans-serif;
 }
 
 .popup .content #popupHeader {
@@ -241,7 +241,7 @@ main{
     border-width: 1.5px;
 }
 
-.popup .content h2{
+.popup .content h2 {
     padding: 0;
     margin: 0;
     font-size: 14px;
@@ -252,40 +252,40 @@ main{
 .popup .closeBtn {
     cursor: pointer;
     text-align: center;
-    color: #B6B6B6;
+    color: #b6b6b6;
     font-size: 14px;
     padding: 10px 20px 10px 10px;
 }
 
 .popup .content {
-    font-family: 'Nunito', sans-serif;
+    font-family: "Nunito", sans-serif;
     position: absolute;
     height: 370px;
     width: 320px;
     border-radius: 8px;
     top: 50%;
     left: 50%;
-    z-index:2;
+    z-index: 2;
     transform: translate(-50%, -50%) scale(0);
     background-color: white;
     box-shadow: 0px 1px 8px #00000029;
-    background: #FFFFFF 0% 0% no-repeat padding-box;
+    background: #ffffff 0% 0% no-repeat padding-box;
 }
 
 .popup.active .content {
-    transition:all 200ms ease-in-out;
-    transform:translate(-50%,-50%) scale(1);
+    transition: all 200ms ease-in-out;
+    transform: translate(-50%, -50%) scale(1);
 }
 
 .popup .filter {
     position: fixed;
     display: none;
-    top:0px;
-    left:0px;
-    width:100vw;
-    height:100vh;
-    background:rgba(155, 155, 155, 0.774);
-    z-index:1;
+    top: 0px;
+    left: 0px;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(155, 155, 155, 0.774);
+    z-index: 1;
 }
 
 .popup.active .filter {
@@ -310,13 +310,13 @@ main{
     border: 0;
     cursor: pointer;
     color: white;
-    background-color: #56D4C2;
+    background-color: #56d4c2;
 }
 
 .content form input {
     height: 40px;
     font-size: 16px;
-    border: 1px solid #B6B6B6;
+    border: 1px solid #b6b6b6;
     border-radius: 5px;
 }
 
@@ -328,28 +328,3 @@ main{
     color: #b3b3b3;
     font-weight: 600;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
-
-
-
