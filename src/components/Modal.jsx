@@ -1,8 +1,8 @@
 import React from 'react';
 
 const Modal = () => (
-  <aside className="popup">
-    <div className="filter" />
+  <aside className="popup" id="popup">
+    <div className="filter" id="filter" />
     <div className="content">
       <div id="popupHeader">
         <h2>New todo</h2>
