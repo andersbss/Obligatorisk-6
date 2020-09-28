@@ -1,20 +1,15 @@
-import React, { useState } from 'react';
-import Modal from './Modal';
+import React from 'react';
 
 const TodoButton = () => {
-  const [showForm, setState] = useState(false);
   const handleClick = () => {
-    setState((s) => !s);
+    document.getElementById('popup').classList.toggle('active');
   };
 
   return (
-    <div>
-      <button type="button" id="addTodoBtn" onClick={handleClick}>
-        <span className="plus" />
-        <span className="todoTxt">Todo</span>
-      </button>
-      {showForm && <Modal />}
-    </div>
+    <button type="button" id="addTodoBtn" onClick={handleClick}>
+      <span className="plus" />
+      <span className="todoTxt">Todo</span>
+    </button>
   );
 };
 
