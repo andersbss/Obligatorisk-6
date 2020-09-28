@@ -106,7 +106,8 @@
       {
         "trailingComma": "es5",
         "singleQuote": true,
-        "printWidth": 80
+        "printWidth": 80,
+        "endOfLine": "auto"
       }
     ],
     "jsx-a11y/href-no-hash": "off",
@@ -116,6 +117,7 @@
         "aspects": ["invalidHref"]
       }
     ],
+    
     "react-hooks/rules-of-hooks": "error",
     "react-hooks/exhaustive-deps": "warn"
   },
