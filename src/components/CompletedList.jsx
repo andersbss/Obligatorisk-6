@@ -2,7 +2,7 @@ import React from 'react';
 import Title from './Title';
 
 const CompletedList = () => (
-  <section>
+  <section id="completedTodos">
     <Title title="Completed todos" />
     <form id="filterCheckbox">
       <input type="checkbox" />
