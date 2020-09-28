@@ -1,7 +1,6 @@
 import React from 'react';
 import Navbar from './src/components/Navbar';
 import TodoButton from './src/components/TodoButton';
-import Title from './src/components/Title';
 
 const App = () => (
   <>

@@ -8,3 +8,5 @@ const CompletedListItem = ({ title, author, description, date }) => (
     <td>{date}</td>
   </tr>
 );
+
+export default CompletedListItem;
