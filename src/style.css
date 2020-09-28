@@ -166,6 +166,10 @@ main {
     margin-right: 2.2%;
 }
 
+#filterCheckbox input {
+    margin-right: 9px;
+}
+
 #completedTodosTable {
     width: 100%;
     text-align: left;
