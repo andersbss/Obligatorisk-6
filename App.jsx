@@ -5,6 +5,7 @@ import TodoCardList from './src/components/TodoCardList';
 import CompletedList from './src/components/CompletedList';
 import TodoCard from './src/components/TodoCard';
 import CompletedListItem from './src/components/CompletedListItem';
+import Modal from './src/components/Modal';
 
 const App = () => (
   <>
@@ -14,7 +15,7 @@ const App = () => (
       <TodoCardList />
       <CompletedList />
     </main>
-    <aside className="popup" id="popup" />
+    <Modal />
   </>
 );
 

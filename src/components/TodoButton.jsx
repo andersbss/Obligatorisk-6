@@ -2,7 +2,7 @@ import React from 'react';
 
 const TodoButton = () => {
   const handleClick = () => {
-    console.log('click');
+    document.getElementById('popup').classList.toggle('active');
   };
 
   return (
