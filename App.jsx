@@ -15,7 +15,6 @@ const App = () => (
       <TodoCardList />
       <CompletedList />
     </main>
-    <Modal />
   </>
 );
 
