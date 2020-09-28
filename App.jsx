@@ -1,8 +1,9 @@
 import React from 'react';
+import TodoButton from './src/components/TodoButton';
 
 const App = () => (
   <>
-    <h1>Tittel</h1>
+    <TodoButton />
   </>
 );
 
