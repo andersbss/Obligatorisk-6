@@ -1,6 +1,6 @@
 import React from 'react';
 
-const TodoCard = (title, description, id) => (
+const TodoCard = ({ title, description, id }) => (
   <li className="todoItem" id={id}>
     <h3>{title}</h3>
     <p>{description}</p>

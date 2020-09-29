@@ -9,19 +9,26 @@ import Modal from './src/components/Modal';
 
 const App = () => {
   const [modalVisibility, setState] = useState('');
+  const [todo, setTodo] = useState(null);
 
-  const toggleModal = () =>
-    setState((param) => (param === 'active' ? '' : 'active'));
+  // eslint-disable-next-line prettier/prettier
+  const toggleModal = () => setState((param) => (param === 'active' ? '' : 'active'));
+
+  const newTodo = (incTodo) => setTodo(incTodo);
 
   return (
     <>
       <Navbar header1="HIOF" header2="User user" />
       <main>
         <TodoButton toggleModal={toggleModal} />
-        <TodoCardList />
+        <TodoCardList newTodo={todo} />
         <CompletedList />
       </main>
-      <Modal visibility={modalVisibility} toggleModal={toggleModal} />
+      <Modal
+        visibility={modalVisibility}
+        toggleModal={toggleModal}
+        newTodo={newTodo}
+      />
     </>
   );
 };
