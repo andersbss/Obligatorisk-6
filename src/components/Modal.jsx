@@ -7,7 +7,7 @@ const Modal = ({ visibility, handleModal }) => (
       <div id="popupHeader">
         <h2>New todo</h2>
         <div className="closeBtn" id="closeBtn" onClick={handleModal}>
-          "&#10006"
+          &#10006
         </div>
       </div>
       <form id="newTodoForm">
