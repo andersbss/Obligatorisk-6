@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Navbar from './src/components/Navbar';
 import TodoButton from './src/components/TodoButton';
 import TodoCardList from './src/components/TodoCardList';
@@ -8,6 +8,11 @@ import CompletedListItem from './src/components/CompletedListItem';
 import Modal from './src/components/Modal';
 
 const App = () => {
+  const [modalVisibility, setState] = useState('');
+
+  const toggleModal = () =>
+    setState((param) => (param === 'active' ? '' : 'active'));
+
   const todoList = [
     {
       title: 'yo',
@@ -20,14 +25,16 @@ const App = () => {
       id: '2',
     },
   ];
+
   return (
     <>
       <Navbar header1="HIOF" header2="User user" />
       <main>
-        <TodoButton />
+        <TodoButton toggleModal={toggleModal} />
         <TodoCardList todoCardlist={todoList} />
         <CompletedList />
       </main>
+      <Modal visibility={modalVisibility} toggleModal={toggleModal} />
     </>
   );
 };
