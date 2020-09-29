@@ -3,7 +3,7 @@ import React from 'react';
 const Modal = ({ visibility, toggleModal, newTodo }) => {
   // const [todo, setTodo] = useState(null);
 
-  const generateId = () => `Todo${1}`; // Fix ID handling
+  const generateId = () => 1; // Fix ID handling
 
   /*
   const dateZeroHandler = (num) => (num < 10 ? `0${num}` : num);
