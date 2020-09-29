@@ -3,8 +3,6 @@ import React from 'react';
 const Modal = ({ visibility, toggleModal, newTodo }) => {
   // const [todo, setTodo] = useState(null);
 
-  const generateId = () => 1; // Fix ID handling
-
   /*
   const dateZeroHandler = (num) => (num < 10 ? `0${num}` : num);
 
@@ -31,7 +29,7 @@ const Modal = ({ visibility, toggleModal, newTodo }) => {
       title: formTitle.value,
       description: formDescription.value,
       author: formAuthor.value,
-      id: generateId(),
+      id: 0,
     });
 
     toggleModal();

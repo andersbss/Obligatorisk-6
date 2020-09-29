@@ -20,6 +20,7 @@ const TodoCardList = ({ todos }) => {
             key={todo.id}
             title={todo.title}
             description={todo.description}
+            id={todo.id}
           />
         ))}
       </ul>

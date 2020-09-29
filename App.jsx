@@ -14,7 +14,10 @@ const App = () => {
   // eslint-disable-next-line prettier/prettier
   const toggleModal = () => setState((param) => (param === 'active' ? '' : 'active'));
 
-  const newTodo = (todo) => setTodos((oldTodos) => [...oldTodos, todo]);
+  const newTodo = (todo) => {
+    setTodos((oldTodos) => [...oldTodos, todo]);
+    todo.id = todos.length + 1;
+  };
 
   return (
     <>
