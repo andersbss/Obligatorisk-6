@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import Modal from './Modal';
 
-const TodoButton = ({ handleModal }) => (
-  <button type="button" id="addTodoBtn" onClick={handleModal}>
+const TodoButton = ({ toggleModal }) => (
+  <button type="button" id="addTodoBtn" onClick={toggleModal}>
     <span className="plus" />
     <span className="todoTxt">Todo</span>
   </button>

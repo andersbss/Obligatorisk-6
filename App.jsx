@@ -10,18 +10,18 @@ import Modal from './src/components/Modal';
 const App = () => {
   const [modalVisibility, setState] = useState('');
 
-  const handleModal = () =>
+  const toggleModal = () =>
     setState((param) => (param === 'active' ? '' : 'active'));
 
   return (
     <>
       <Navbar header1="HIOF" header2="User user" />
       <main>
-        <TodoButton handleModal={handleModal} />
+        <TodoButton toggleModal={toggleModal} />
         <TodoCardList />
         <CompletedList />
       </main>
-      <Modal visibility={modalVisibility} handleModal={handleModal} />
+      <Modal visibility={modalVisibility} toggleModal={toggleModal} />
     </>
   );
 };

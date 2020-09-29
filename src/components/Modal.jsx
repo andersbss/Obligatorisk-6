@@ -1,13 +1,13 @@
 import React from 'react';
 
-const Modal = ({ visibility, handleModal }) => (
+const Modal = ({ visibility, toggleModal, handleSubmission }) => (
   <aside className={`popup ${visibility}`} id="popup">
     <div className="filter" id="filter" />
     <div className="content">
       <div id="popupHeader">
         <h2>New todo</h2>
-        <div className="closeBtn" id="closeBtn" onClick={handleModal}>
-          &#10006
+        <div className="closeBtn" id="closeBtn" onClick={toggleModal}>
+          x
         </div>
       </div>
       <form id="newTodoForm">
