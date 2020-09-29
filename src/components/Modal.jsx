@@ -29,7 +29,6 @@ const Modal = ({ visibility, toggleModal, newTodo }) => {
       title: formTitle.value,
       description: formDescription.value,
       author: formAuthor.value,
-      id: 0,
     });
 
     toggleModal();

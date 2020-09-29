@@ -1,7 +1,7 @@
 import React from 'react';
 import TodoCard from './TodoCard';
 
-const TodoCardList = ({ todos }) => {
+const TodoCardList = ({ todos, deleteTodo }) => {
   if (todos.length === 0) {
     return (
       <section id="todos">
@@ -21,6 +21,7 @@ const TodoCardList = ({ todos }) => {
             title={todo.title}
             description={todo.description}
             id={todo.id}
+            deleteTodo={deleteTodo}
           />
         ))}
       </ul>
