@@ -9,22 +9,15 @@ import Modal from './src/components/Modal';
 
 const App = () => {
   const [modalVisibility, setState] = useState('');
+  const [todoList, setTodoList] = useState([]);
 
   const toggleModal = () =>
     setState((param) => (param === 'active' ? '' : 'active'));
 
-  const todoList = [
-    {
-      title: 'yo',
-      description: 'hh',
-      id: '1',
-    },
-    {
-      title: 'ja',
-      description: 'hei anders',
-      id: '2',
-    },
-  ];
+  const addNewTodo = (newTodo) => {
+    newTodo.id = todoList.length + 1;
+    setTodoList((oldTodos) => [...oldTodos, newTodo]);
+  };
 
   return (
     <>
@@ -34,7 +27,11 @@ const App = () => {
         <TodoCardList todoCardlist={todoList} />
         <CompletedList />
       </main>
-      <Modal visibility={modalVisibility} toggleModal={toggleModal} />
+      <Modal
+        visibility={modalVisibility}
+        toggleModal={toggleModal}
+        addNewTodo={addNewTodo}
+      />
     </>
   );
 };
