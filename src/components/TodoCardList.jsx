@@ -2,9 +2,15 @@ import React from 'react';
 import TodoCard from './TodoCard';
 
 const TodoCardList = ({ todos }) => {
-  // if (newTodo != null) todos.push(newTodo);
-
-  if (todos.length === 0) return <p>Jippi, ingen todos</p>;
+  if (todos.length === 0) {
+    return (
+      <section id="todos">
+        <ul id="todoList">
+          <p>Jippi! Ingen todos i dag</p>
+        </ul>
+      </section>
+    );
+  }
 
   return (
     <section id="todos">
