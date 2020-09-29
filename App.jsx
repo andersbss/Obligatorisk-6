@@ -21,7 +21,7 @@ const App = () => {
         <TodoCardList />
         <CompletedList />
       </main>
-      <Modal visibility={modalVisibility} />
+      <Modal visibility={modalVisibility} handleModal={handleModal} />
     </>
   );
 };
