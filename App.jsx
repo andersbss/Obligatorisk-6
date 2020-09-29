@@ -10,12 +10,12 @@ import Modal from './src/components/Modal';
 const App = () => (
   <>
     <Navbar header1="HIOF" header2="User user" />
+    <Modal />
     <main>
-      <TodoButton />
+      <TodoButton mod={Modal} />
       <TodoCardList />
       <CompletedList />
     </main>
-    <Modal />
   </>
 );
 

@@ -1,8 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
+import Modal from './Modal';
 
-const TodoButton = () => {
+const TodoButton = (prop) => {
   const handleClick = () => {
-    document.getElementById('popup').classList.toggle('active');
+    console.log(prop);
+
+    // document.getElementById('popup').classList.toggle('active');
   };
 
   return (
