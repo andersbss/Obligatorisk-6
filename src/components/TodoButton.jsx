@@ -3,9 +3,7 @@ import Modal from './Modal';
 
 const TodoButton = () => {
   const [showForm, setState] = useState(false);
-  const handleClick = () => {
-    setState((s) => !s);
-  };
+  const handleClick = () => setState((s) => !s);
 
   return (
     <div>
@@ -13,7 +11,7 @@ const TodoButton = () => {
         <span className="plus" />
         <span className="todoTxt">Todo</span>
       </button>
-      {showForm && <Modal />}
+      {showForm && <Modal handler={handleClick} />}
     </div>
   );
 };
