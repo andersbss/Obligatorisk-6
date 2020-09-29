@@ -5,6 +5,7 @@ const Modal = ({ visibility, toggleModal, newTodo }) => {
 
   const generateId = () => `Todo${1}`; // Fix ID handling
 
+  /*
   const dateZeroHandler = (num) => (num < 10 ? `0${num}` : num);
 
   const formatYear = (year) => {
@@ -12,6 +13,7 @@ const Modal = ({ visibility, toggleModal, newTodo }) => {
     return `${splitYear[2]}${splitYear[3]}`;
   };
 
+  
   const getDate = () => {
     const date = new Date();
     const day = dateZeroHandler(date.getDate());
@@ -19,6 +21,7 @@ const Modal = ({ visibility, toggleModal, newTodo }) => {
     const year = formatYear(date.getFullYear());
     return `${day}.${month}.${year}`;
   };
+  */
 
   const handleFormSubmission = (e) => {
     e.preventDefault();
@@ -28,7 +31,6 @@ const Modal = ({ visibility, toggleModal, newTodo }) => {
       title: formTitle.value,
       description: formDescription.value,
       author: formAuthor.value,
-      date: getDate(),
       id: generateId(),
     });
 
