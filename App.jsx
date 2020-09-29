@@ -12,7 +12,7 @@ const App = () => (
     <Navbar header1="HIOF" header2="User user" />
     <Modal />
     <main>
-      <TodoButton mod={Modal} />
+      <TodoButton />
       <TodoCardList />
       <CompletedList />
     </main>
