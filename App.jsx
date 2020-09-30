@@ -10,6 +10,7 @@ import Modal from './src/components/Modal';
 const App = () => {
   const [modalVisibility, setState] = useState('');
   const [todoList, setTodoList] = useState([]);
+  const [completedTodoList, setCompletedTodoList] = useState([]);
 
   const toggleModal = () =>
     setState((param) => (param === 'active' ? '' : 'active'));
@@ -17,6 +18,19 @@ const App = () => {
   const addNewTodo = (newTodo) => {
     newTodo.id = todoList.length + 1;
     setTodoList((oldTodos) => [...oldTodos, newTodo]);
+    console.log(newTodo);
+  };
+
+  const deleteTodo = (e) => {
+    const id = parseInt(e.target.parentNode.parentNode.id);
+    setTodoList(todoList.filter((todo) => todo.id !== id));
+  };
+
+  const completeTodo = (e) => {
+    const id = parseInt(e.target.parentNode.parentNode.id);
+    const completedTodo = todoList.filter((todo) => todo.id === id);
+    setCompletedTodoList((oldTodos) => [...oldTodos, ...completedTodo]);
+    setTodoList(todoList.filter((todo) => todo.id !== id));
   };
 
   return (
@@ -24,8 +38,12 @@ const App = () => {
       <Navbar header1="HIOF" header2="User user" />
       <main>
         <TodoButton toggleModal={toggleModal} />
-        <TodoCardList todoCardlist={todoList} />
-        <CompletedList />
+        <TodoCardList
+          todoCardlist={todoList}
+          deleteTodo={deleteTodo}
+          completeTodo={completeTodo}
+        />
+        <CompletedList completedTodoCardList={completedTodoList} />
       </main>
       <Modal
         visibility={modalVisibility}

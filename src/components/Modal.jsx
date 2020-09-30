@@ -1,15 +1,15 @@
 import React, { useState } from 'react';
 
-const Modal = ({ visibility, toggleModal, addNewTodo }) => {
+const Modal = ({ visibility, toggleModal, addNewTodo, deleteTodo }) => {
   const handleFormSubmission = (e) => {
     e.preventDefault();
     const [title, desc, author] = e.target;
 
     addNewTodo({
+      id: null,
       title: title.value,
       description: desc.value,
       author: author.value,
-      id: 'default',
     });
     toggleModal();
   };

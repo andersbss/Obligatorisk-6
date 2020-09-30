@@ -1,7 +1,8 @@
 import React from 'react';
 import Title from './Title';
+import CompletedListItem from './CompletedListItem';
 
-const CompletedList = () => (
+const CompletedList = ({ completedTodoCardList }) => (
   <section id="completedTodos">
     <Title title="Completed todos" />
     <form id="filterCheckbox">
@@ -17,6 +18,17 @@ const CompletedList = () => (
           <th id="dateHeader">Completed date</th>
         </tr>
       </thead>
+      <tbody>
+        {completedTodoCardList &&
+          completedTodoCardList.map((card) => (
+            <CompletedListItem
+              title={card.title}
+              author={card.author}
+              description={card.description}
+              date="heftig dato"
+            />
+          ))}
+      </tbody>
     </table>
   </section>
 );
