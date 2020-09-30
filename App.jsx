@@ -10,11 +10,11 @@ let todoId = 0;
 const App = () => {
   const [modalVisibility, setState] = useState('');
   const [todos, setTodos] = useState([]);
-
-  // eslint-disable-next-line prettier/prettier
-  const toggleModal = () => setState((param) => (param === 'active' ? '' : 'active'));
+  const [completedTodos, setCompletedTodos] = useState([]);
 
   const generateId = () => (todoId += 1);
+
+  const toggleModal = () => setState((param) => (param === 'active' ? '' : 'active'));
 
   const newTodo = (todo) => {
     todo.id = generateId();
@@ -26,19 +26,21 @@ const App = () => {
     setTodos(todos.filter((todo) => todo.id !== todoId));
   };
 
+  const completeTodo = (e) => {
+    const todoId = parseInt(e.target.parentNode.parentNode.id);
+    console.log('Hey');
+    deleteTodo(e);
+  };
+
   return (
     <>
       <Navbar header1="HIOF" header2="User user" />
       <main>
         <TodoButton toggleModal={toggleModal} />
-        <TodoCardList todos={todos} deleteTodo={deleteTodo} />
+        <TodoCardList todos={todos} deleteTodo={deleteTodo} completeTodo={completeTodo} />
         <CompletedList />
       </main>
-      <Modal
-        visibility={modalVisibility}
-        toggleModal={toggleModal}
-        newTodo={newTodo}
-      />
+      <Modal visibility={modalVisibility} toggleModal={toggleModal} newTodo={newTodo} />
     </>
   );
 };
