@@ -10,10 +10,9 @@ const CompletedListItem = ({ title, author, description }) => {
 
   const getDate = () => {
     const date = new Date();
-    const day = dateZeroHandler(date.getDate());
-    const month = dateZeroHandler(date.getMonth() + 1);
-    const year = formatYear(date.getFullYear());
-    return `${day}.${month}.${year}`;
+    return `${dateZeroHandler(date.getDate())}.${dateZeroHandler(date.getMonth() + 1)}.${formatYear(
+      date.getFullYear()
+    )}`;
   };
 
   return (
