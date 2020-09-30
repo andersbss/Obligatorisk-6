@@ -18,7 +18,7 @@ const App = () => {
 
   const newTodo = (todo) => {
     todo.id = generateId();
-    setTodos((oldTodos) => [...oldTodos, todo]);
+    setTodos((prev) => [...prev, todo]);
   };
 
   const deleteTodo = (e) => {
@@ -28,7 +28,7 @@ const App = () => {
 
   const completeTodo = (e) => {
     const todoId = parseInt(e.target.parentNode.parentNode.id);
-    console.log('Hey');
+    setCompletedTodos((prev) => [...prev, ...todos.filter((todo) => todo.id === todoId)]);
     deleteTodo(e);
   };
 
@@ -38,7 +38,7 @@ const App = () => {
       <main>
         <TodoButton toggleModal={toggleModal} />
         <TodoCardList todos={todos} deleteTodo={deleteTodo} completeTodo={completeTodo} />
-        <CompletedList />
+        <CompletedList completedTodos={completedTodos} />
       </main>
       <Modal visibility={modalVisibility} toggleModal={toggleModal} newTodo={newTodo} />
     </>

@@ -1,26 +1,6 @@
 import React from 'react';
 
 const Modal = ({ visibility, toggleModal, newTodo }) => {
-  // const [todo, setTodo] = useState(null);
-
-  /*
-  const dateZeroHandler = (num) => (num < 10 ? `0${num}` : num);
-
-  const formatYear = (year) => {
-    const splitYear = year.toString().split('');
-    return `${splitYear[2]}${splitYear[3]}`;
-  };
-
-  
-  const getDate = () => {
-    const date = new Date();
-    const day = dateZeroHandler(date.getDate());
-    const month = dateZeroHandler(date.getMonth() + 1);
-    const year = formatYear(date.getFullYear());
-    return `${day}.${month}.${year}`;
-  };
-  */
-
   const handleFormSubmission = (e) => {
     e.preventDefault();
     const [formTitle, formDescription, formAuthor] = e.target;
