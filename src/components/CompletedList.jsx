@@ -25,7 +25,6 @@ const CompletedList = ({ completedTodoCardList }) => (
               title={card.title}
               author={card.author}
               description={card.description}
-              date="heftig dato"
             />
           ))}
       </tbody>
