@@ -11,6 +11,7 @@ const App = () => {
   const [modalVisibility, setState] = useState('');
   const [todos, setTodos] = useState([]);
   const [completedTodos, setCompletedTodos] = useState([]);
+  const [searchParam, setSearchParam] = useState('');
 
   const generateId = () => (todoId += 1);
 
@@ -32,13 +33,22 @@ const App = () => {
     deleteTodo(e);
   };
 
+  const handleSearch = (e) => {
+    setSearchParam(e.target.value);
+    console.log(searchParam);
+  };
+
   return (
     <>
       <Navbar header1="HIOF" header2="User user" />
       <main>
         <TodoButton toggleModal={toggleModal} />
         <TodoCardList todos={todos} deleteTodo={deleteTodo} completeTodo={completeTodo} />
-        <CompletedList completedTodos={completedTodos} />
+        <CompletedList
+          completedTodos={completedTodos}
+          handleSearch={handleSearch}
+          search={searchParam}
+        />
       </main>
       <Modal visibility={modalVisibility} toggleModal={toggleModal} newTodo={newTodo} />
     </>

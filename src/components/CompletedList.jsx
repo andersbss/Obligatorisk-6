@@ -2,8 +2,12 @@ import React from 'react';
 import Title from './Title';
 import CompletedListItem from './CompletedListItem';
 
-const CompletedList = ({ completedTodos }) => {
+const CompletedList = ({ completedTodos, handleSearch, search }) => {
   console.log(completedTodos);
+
+  const handleChange = (e) => {
+    handleSearch(e);
+  };
 
   return (
     <section id="completedTodos">
@@ -11,6 +15,10 @@ const CompletedList = ({ completedTodos }) => {
       <form id="filterCheckbox">
         <input type="checkbox" />
         <label>Filter by date</label>
+      </form>
+      <form id="search">
+        <label htmlFor="search">Søk: </label>
+        <input type="text" id="search" placeholder="title" onChange={handleChange} value={search} />
       </form>
       <table id="completedTodosTable">
         <thead>
