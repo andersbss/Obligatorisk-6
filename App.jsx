@@ -20,7 +20,7 @@ const App = () => {
 
   const handleSearch = (e) => setSearchParam(e.target.value);
 
-  const handleCompletedList = () => (searchParam.length === 0 ? completedTodos : searchTodos);
+  const handleCompletedList = () => (searchParam.length <= 0 ? completedTodos : searchTodos);
 
   const newTodo = (todo) => {
     todo.id = generateId();

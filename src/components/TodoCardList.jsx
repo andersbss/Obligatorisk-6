@@ -1,21 +1,13 @@
 import React from 'react';
 import TodoCard from './TodoCard';
 
-const TodoCardList = ({ todos, deleteTodo, completeTodo }) => {
-  if (todos.length === 0) {
-    return (
-      <section id="todos">
-        <ul id="todoList">
-          <p>Jippi! Ingen todos i dag</p>
-        </ul>
-      </section>
-    );
-  }
-
-  return (
-    <section id="todos">
-      <ul id="todoList">
-        {todos.map((todo) => (
+const TodoCardList = ({ todos, deleteTodo, completeTodo }) => (
+  <section id="todos">
+    <ul id="todoList">
+      {todos.length === 0 ? (
+        <p>Jippi! Ingen todos i dag</p>
+      ) : (
+        todos.map((todo) => (
           <TodoCard
             key={todo.id}
             title={todo.title}
@@ -24,10 +16,10 @@ const TodoCardList = ({ todos, deleteTodo, completeTodo }) => {
             deleteTodo={deleteTodo}
             completeTodo={completeTodo}
           />
-        ))}
-      </ul>
-    </section>
-  );
-};
+        ))
+      )}
+    </ul>
+  </section>
+);
 
 export default TodoCardList;

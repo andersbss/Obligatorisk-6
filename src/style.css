@@ -177,6 +177,10 @@ main {
     border-spacing: 0;
 }
 
+#todos #todoList p {
+    color: #b3b3b3;
+}
+
 /* || Completed Todos search field*/
 
 #search .searchField {
