@@ -17,8 +17,14 @@ const CompletedList = ({ completedTodos, handleSearch, search }) => {
         <label>Filter by date</label>
       </form>
       <form id="search">
-        <label htmlFor="search">Søk: </label>
-        <input type="text" id="search" placeholder="title" onChange={handleChange} value={search} />
+        <input
+          className="searchField"
+          type="text"
+          id="search"
+          placeholder="Search"
+          onChange={handleChange}
+          value={search}
+        />
       </form>
       <table id="completedTodosTable">
         <thead>
