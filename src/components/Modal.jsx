@@ -32,7 +32,13 @@ const Modal = ({ visibility, toggleModal, newTodo }) => {
         </div>
         <form id="newTodoForm" onSubmit={handleFormSubmission}>
           <label>Title</label>
-          <input type="text" className="formInput" id="todoTitleInput" maxLength="20" />
+          <input
+            type="text"
+            className="formInput"
+            placeholder="Title"
+            id="todoTitleInput"
+            maxLength="20"
+          />
           <label>
             Description
             <span id="charCount">({charLength} characters left)</span>

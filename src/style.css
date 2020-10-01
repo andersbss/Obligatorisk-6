@@ -177,7 +177,7 @@ main {
     border-spacing: 0;
 }
 
-#todos #todoList p {
+#todos #todoList .message {
     color: #b3b3b3;
 }
 

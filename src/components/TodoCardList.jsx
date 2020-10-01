@@ -4,8 +4,8 @@ import TodoCard from './TodoCard';
 const TodoCardList = ({ todos, deleteTodo, completeTodo }) => (
   <section id="todos">
     <ul id="todoList">
-      {todos.length === 0 ? (
-        <p>Jippi! Ingen todos i dag</p>
+      {todos.length <= 0 ? (
+        <p className="message">Jippi! Ingen todos i dag</p>
       ) : (
         todos.map((todo) => (
           <TodoCard
