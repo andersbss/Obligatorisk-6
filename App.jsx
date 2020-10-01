@@ -18,6 +18,10 @@ const App = () => {
 
   const toggleModal = () => setState((param) => (param === 'active' ? '' : 'active'));
 
+  const handleSearch = (e) => setSearchParam(e.target.value);
+
+  const handleCompletedList = () => (searchParam.length === 0 ? completedTodos : searchTodos);
+
   const newTodo = (todo) => {
     todo.id = generateId();
     setTodos((prev) => [...prev, todo]);
@@ -41,12 +45,6 @@ const App = () => {
       )
     );
   }, [completedTodos, searchParam]);
-
-  const handleSearch = (e) => {
-    setSearchParam(e.target.value);
-  };
-
-  const handleCompletedList = () => (searchParam.length === 0 ? completedTodos : searchTodos);
 
   return (
     <>
