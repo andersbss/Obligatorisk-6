@@ -8,10 +8,10 @@ import Modal from './src/components/Modal';
 let todoId = 0;
 
 const App = () => {
-  const [modalVisibility, setState] = useState('');
   const [todos, setTodos] = useState([]);
   const [completedTodos, setCompletedTodos] = useState([]);
   const [searchTodos, setSearchTodos] = useState([]);
+  const [modalVisibility, setState] = useState('');
   const [searchParam, setSearchParam] = useState('');
 
   const generateId = () => (todoId += 1);

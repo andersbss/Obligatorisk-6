@@ -22,7 +22,7 @@ const Modal = ({ visibility, toggleModal, newTodo }) => {
 
   return (
     <aside className={`popup ${visibility}`} id="popup">
-      <div className="filter" id="filter" />
+      <div className="filter" id="filter" onClick={toggleModal} />
       <div className="content">
         <div id="popupHeader">
           <h2>New todo</h2>
