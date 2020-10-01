@@ -26,7 +26,7 @@ const CompletedList = ({ completedTodos }) => {
             <CompletedListItem
               key={todo.id}
               title={todo.title}
-              author={todo.title}
+              author={todo.author}
               description={todo.description}
             />
           ))}
