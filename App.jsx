@@ -35,6 +35,9 @@ const App = () => {
 
   const handleSearch = (e) => {
     setSearchParam(e.target.value);
+    const searchedTodos = completedTodos.filter((todo) => todo.title === searchParam);
+    console.log(searchedTodos);
+
     console.log(searchParam);
   };
 
