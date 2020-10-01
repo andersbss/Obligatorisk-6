@@ -3,8 +3,6 @@ import Title from './Title';
 import CompletedListItem from './CompletedListItem';
 
 const CompletedList = ({ completedTodos, handleSearch, search }) => {
-  console.log(completedTodos);
-
   const handleChange = (e) => {
     handleSearch(e);
   };
@@ -36,7 +34,7 @@ const CompletedList = ({ completedTodos, handleSearch, search }) => {
           </tr>
         </thead>
         <tbody>
-          {completedTodos.map((todo) => (
+          {completedTodos().map((todo) => (
             <CompletedListItem
               key={todo.id}
               title={todo.title}

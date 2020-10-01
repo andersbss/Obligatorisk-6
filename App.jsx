@@ -11,6 +11,7 @@ const App = () => {
   const [modalVisibility, setState] = useState('');
   const [todos, setTodos] = useState([]);
   const [completedTodos, setCompletedTodos] = useState([]);
+  const [searchTodos, setSearchTodos] = useState([]);
   const [searchParam, setSearchParam] = useState('');
 
   const generateId = () => (todoId += 1);
@@ -35,11 +36,11 @@ const App = () => {
 
   const handleSearch = (e) => {
     setSearchParam(e.target.value);
-    const searchedTodos = completedTodos.filter((todo) => todo.title === searchParam);
-    console.log(searchedTodos);
-
     console.log(searchParam);
+    setSearchTodos(completedTodos.filter((todo) => todo.title.toString() === searchParam));
   };
+
+  const handleCompletedList = () => (searchParam.length === 0 ? completedTodos : searchTodos);
 
   return (
     <>
@@ -48,7 +49,7 @@ const App = () => {
         <TodoButton toggleModal={toggleModal} />
         <TodoCardList todos={todos} deleteTodo={deleteTodo} completeTodo={completeTodo} />
         <CompletedList
-          completedTodos={completedTodos}
+          completedTodos={handleCompletedList}
           handleSearch={handleSearch}
           search={searchParam}
         />

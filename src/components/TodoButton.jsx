@@ -1,5 +1,4 @@
-import React, { useState } from 'react';
-import Modal from './Modal';
+import React from 'react';
 
 const TodoButton = ({ toggleModal }) => (
   <button type="button" id="addTodoBtn" onClick={toggleModal}>
