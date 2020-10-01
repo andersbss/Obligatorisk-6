@@ -1,6 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 const Modal = ({ visibility, toggleModal, newTodo }) => {
+  const [charLength, setCharLength] = useState(50);
+
+  const handleChange = (e) => {
+    setCharLength(50 - e.target.value.length);
+  };
+
   const handleFormSubmission = (e) => {
     e.preventDefault();
     const [formTitle, formDescription, formAuthor] = e.target;
@@ -26,23 +32,18 @@ const Modal = ({ visibility, toggleModal, newTodo }) => {
         </div>
         <form id="newTodoForm" onSubmit={handleFormSubmission}>
           <label>Title</label>
-          <input
-            type="text"
-            className="formInput"
-            id="todoTitleInput"
-            maxLength="20"
-            placeholder="Title"
-          />
+          <input type="text" className="formInput" id="todoTitleInput" maxLength="20" />
           <label>
             Description
-            <span id="charCount" />
+            <span id="charCount">({charLength} characters left)</span>
           </label>
           <input
             type="text"
             className="formInput"
-            maxLength="30"
+            maxLength="50"
             id="todoDescriptionInput"
             placeholder="Description"
+            onChange={handleChange}
           />
           <label>Author</label>
           <input
