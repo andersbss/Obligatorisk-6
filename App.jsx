@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Navbar from './src/components/Navbar';
 import TodoButton from './src/components/TodoButton';
 import TodoCardList from './src/components/TodoCardList';
@@ -34,10 +34,12 @@ const App = () => {
     deleteTodo(e);
   };
 
+  useEffect(() => {
+    setSearchTodos(completedTodos.filter((todo) => todo.title.toString() === searchParam));
+  }, [completedTodos, searchParam]);
+
   const handleSearch = (e) => {
     setSearchParam(e.target.value);
-    console.log(searchParam);
-    setSearchTodos(completedTodos.filter((todo) => todo.title.toString() === searchParam));
   };
 
   const handleCompletedList = () => (searchParam.length === 0 ? completedTodos : searchTodos);
