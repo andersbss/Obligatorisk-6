@@ -35,7 +35,11 @@ const App = () => {
   };
 
   useEffect(() => {
-    setSearchTodos(completedTodos.filter((todo) => todo.title.toString() === searchParam));
+    setSearchTodos(
+      completedTodos.filter((todo) =>
+        todo.title.toString().toLowerCase().includes(searchParam.toLowerCase())
+      )
+    );
   }, [completedTodos, searchParam]);
 
   const handleSearch = (e) => {
