@@ -18,23 +18,22 @@ const App = () => {
 
   const toggleModal = () => setState((param) => (param === 'active' ? '' : 'active'));
 
+  const handleCompletedList = () => (searchParam.length <= 0 ? completedTodos : searchTodos);
+
   const handleSearch = (e) => setSearchParam(e.target.value);
 
-  const handleCompletedList = () => (searchParam.length <= 0 ? completedTodos : searchTodos);
+  const getTodoId = (e) => parseInt(e.target.parentNode.parentNode.id);
+
+  const deleteTodo = (e) => setTodos(todos.filter((todo) => todo.id !== getTodoId(e)));
 
   const newTodo = (todo) => {
     todo.id = generateId();
     setTodos((prev) => [...prev, todo]);
   };
 
-  const deleteTodo = (e) => {
-    const todoId = parseInt(e.target.parentNode.parentNode.id);
-    setTodos(todos.filter((todo) => todo.id !== todoId));
-  };
-
   const completeTodo = (e) => {
-    const todoId = parseInt(e.target.parentNode.parentNode.id);
-    setCompletedTodos((prev) => [...prev, ...todos.filter((todo) => todo.id === todoId)]);
+    const id = getTodoId(e);
+    setCompletedTodos((prev) => [...prev, ...todos.filter((todo) => todo.id === id)]);
     deleteTodo(e);
   };
 
