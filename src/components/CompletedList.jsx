@@ -3,10 +3,6 @@ import Title from './Title';
 import CompletedListItem from './CompletedListItem';
 
 const CompletedList = ({ completedTodos, handleSearch, search }) => (
-  // const handleChange = (e) => {
-  //  handleSearch(e);
-  // };
-
   <section id="completedTodos">
     <Title title="Completed todos" />
     <form id="filterCheckbox">
